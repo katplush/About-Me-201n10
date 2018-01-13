@@ -1,11 +1,6 @@
 'use strict'; 
 
-//check if the user's answer is correct
-//what is correct?
-//find out what the answer is?
-//toLowerCase or toUpperCase
-//use a confirm box?
-
+//Introducion to Guessing Game
 var userPoints = 0;
 
 console.log('About Me Guessing Game Introductions');
@@ -16,6 +11,7 @@ var user = prompt('What is your name?');
 
 alert('Hi ' + user + '! I am so glad you want to play my game! Please guess Yes or No for each question.');
 
+//Question 1
 var q1 = 'Do I prefer chocolate to cheese?'
 var answer = prompt(q1).toLowerCase();
 
@@ -85,5 +81,4 @@ if (answer === 'YES' || answer === 'Y') {
     alert('Nope! 4th of July is definitely my favorite!');
 }
 
-
-alert('you have ' + userPoints + ' points. Thanks for playing!');
+alert('You have ' + userPoints + ' points. Thanks for playing!');
