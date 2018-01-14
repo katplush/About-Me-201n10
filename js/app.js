@@ -1,7 +1,8 @@
 'use strict'; 
 
-//Introducion to Guessing Game
 var userPoints = 0;
+
+//Introducion to Guessing Game
 
 console.log('About Me Guessing Game Introductions');
 
@@ -79,6 +80,30 @@ if (answer === 'YES' || answer === 'Y') {
 } else {
     //if it's not correct, exlain correct answer
     alert('Nope! 4th of July is definitely my favorite!');
+}
+
+var q6 = 'How many states have I lived in?'
+var i = 0;
+var correctAnswer = "4" 
+var tries = 4
+
+for (var i = 0; i < tries; i++) {
+    var userGuess = prompt(q6) 
+
+    console.log("User guessed: ", userGuess)
+
+    if (userGuess === correctAnswer) {
+        // correct.
+        alert('You\'ve guessed right! I\'ve lived in Rhode Island, Virginia, Florida and Washington!')
+        userPoints++;
+        break;
+    }   else { 
+        // incorrect.
+        var tooHigh = userGuess > correctAnswer
+        
+        if (tooHigh) alert ("Sorry you guessed too high, please try again!")
+        else alert("Sorry you guessed too low, please try again!")
+    } 
 }
 
 alert('You have ' + userPoints + ' points. Thanks for playing!');
