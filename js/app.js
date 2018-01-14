@@ -82,9 +82,9 @@ if (answer === 'YES' || answer === 'Y') {
     alert('Nope! 4th of July is definitely my favorite!');
 }
 
+//Question 6
 var q6 = 'How many states have I lived in?'
-var i = 0;
-var correctAnswer = "4" 
+var correctQ6Answer = "4" 
 var tries = 4
 
 for (var i = 0; i < tries; i++) {
@@ -92,18 +92,38 @@ for (var i = 0; i < tries; i++) {
 
     console.log("User guessed: ", userGuess)
 
-    if (userGuess === correctAnswer) {
+    if (userGuess === correctQ6Answer) {
         // correct.
         alert('You\'ve guessed right! I\'ve lived in Rhode Island, Virginia, Florida and Washington!')
         userPoints++;
         break;
     }   else { 
         // incorrect.
-        var tooHigh = userGuess > correctAnswer
+        var tooHigh = userGuess > correctQ6Answer
         
         if (tooHigh) alert ("Sorry you guessed too high, please try again!")
         else alert("Sorry you guessed too low, please try again!")
     } 
 }
 
-alert('You have ' + userPoints + ' points. Thanks for playing!');
+//Question 7
+var q7 = 'Can you guess a name of one of my favorite singers or bands?'
+var favSingerBand = ['Cher','Weezer','The Coathangers', 'Stromae','Sia']
+var triesX = 6
+
+//Ask question; compare user guess to answers in array
+for (var i = 0; i < triesX; i++) {
+    var userGuess = prompt(q7)
+    for (var a_i = 0; a_i < favSingerBand.length; a_i++) {
+        console.log("User guessed: ", userGuess)
+
+        if  (userGuess == favSingerBand[a_i].toLowerCase()) {
+            // correct.
+            alert('Wow, you are good!')
+            userPoints++;
+            break;
+        }  
+    }
+}
+
+alert('You have ' + userPoints + ' points out of 7. Thanks for playing ' + user + '!')
