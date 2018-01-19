@@ -13,18 +13,21 @@ var user = prompt('What is your name?');
 alert('Hi ' + user + '! I am so glad you want to play my game! Please guess Yes or No for each question.');
 
 //Question 1
-var q1 = 'Do I prefer chocolate to cheese?';
-var answer = prompt(q1).toLowerCase();
+function question1() {
+  var q1 = 'Do I prefer chocolate to cheese?';
+  var answer = prompt(q1).toLowerCase();
 
-console.log('User guessed:' , answer, ' to question: ', q1);
+  console.log('User guessed:' , answer, ' to question: ', q1);
 
-if (answer === 'no' || answer === 'n') {
-  //if it's correct give them a point
-  userPoints++;
-} else {
-  //if it's not correct, explain correct answer
-  alert('Nope! I love me some chocolate but cheese is my jam.');
+  if (answer === 'no' || answer === 'n') {
+    //if it's correct give them a point
+    userPoints++;
+  } else {
+    //if it's not correct, explain correct answer
+    alert('Nope! I love me some chocolate but cheese is my jam.');
+  }
 }
+question1();
 
 //Question 2
 var q2 = 'Did I keep a secret pet chinchilla in my college dorm room?';
