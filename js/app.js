@@ -98,28 +98,31 @@ function question5() {
 question5();
 
 //Question 6
-var q6 = 'How many states have I lived in?';
-var correctQ6Answer = '4';
-var tries = 4;
+function question6() {
+  var q6 = 'How many states have I lived in?';
+  var correctQ6Answer = '4';
+  var tries = 4;
 
-for (let i = 0; i < tries; i++) {
-  var userGuess = prompt(q6);
+  for (let i = 0; i < tries; i++) {
+    var userGuess = prompt(q6);
 
-  console.log('User guessed: ', userGuess);
+    console.log('User guessed: ', userGuess);
 
-  if (userGuess === correctQ6Answer) {
-  // correct.
-    alert('You\'ve guessed right! I\'ve lived in Rhode Island, Virginia, Florida and Washington!');
-    userPoints++;
-    break;
-  } else {
-  // incorrect.
-    var tooHigh = userGuess > correctQ6Answer;
+    if (userGuess === correctQ6Answer) {
+    // correct.
+      alert('You\'ve guessed right! I\'ve lived in Rhode Island, Virginia, Florida and Washington!');
+      userPoints++;
+      break;
+    } else {
+    // incorrect.
+      var tooHigh = userGuess > correctQ6Answer;
 
-    if (tooHigh) alert ('Sorry you guessed too high, please try again!');
-    else alert('Sorry you guessed too low, please try again!');
+      if (tooHigh) alert ('Sorry you guessed too high, please try again!');
+      else alert('Sorry you guessed too low, please try again!');
+    }
   }
 }
+question6();
 
 //Question 7
 var q7 = 'Can you guess a name of one of my favorite singers or bands?';
