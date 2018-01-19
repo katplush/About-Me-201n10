@@ -30,32 +30,38 @@ function question1() {
 question1();
 
 //Question 2
-var q2 = 'Did I keep a secret pet chinchilla in my college dorm room?';
-answer = prompt(q2).toLowerCase();
+function question2() {
+  var q2 = 'Did I keep a secret pet chinchilla in my college dorm room?';
+  var answer = prompt(q2).toLowerCase();
 
-console.log('User guessed:' , answer, ' to question: ', q2);
+  console.log('User guessed:' , answer, ' to question: ', q2);
 
-if (answer === 'no' || answer === 'n') {
-  //if it's correct give them a point
-  userPoints++;
-} else {
-  //if it's not correct, exlain correct answer
-  alert('Nope! But I had a secret pet python!');
+  if (answer === 'no' || answer === 'n') {
+    //if it's correct give them a point
+    userPoints++;
+  } else {
+    //if it's not correct, exlain correct answer
+    alert('Nope! But I had a secret pet python!');
+  }
 }
+question2();
 
 //Question 3
-var q3 = 'Do I prefer music to TV?';
-answer = prompt(q3).toUpperCase();
+function question3() {
+  var q3 = 'Do I prefer music to TV?';
+  var answer = prompt(q3).toUpperCase();
 
-console.log('User guessed:' , answer, ' to question: ', q3);
+  console.log('User guessed:' , answer, ' to question: ', q3);
 
-if (answer === 'YES' || answer === 'Y') {
-  //if it's correct give them a point
-  userPoints++;
-} else {
-  //if it's not correct, exlain correct answer
-  alert('No way silly! Music is my aeroplane.');
+  if (answer === 'YES' || answer === 'Y') {
+    //if it's correct give them a point
+    userPoints++;
+  } else {
+    //if it's not correct, exlain correct answer
+    alert('No way silly! Music is my aeroplane.');
+  }
 }
+question3();
 
 //Question 4
 var q4 = 'Did I grow up on the West Coast?';
