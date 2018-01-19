@@ -64,32 +64,38 @@ function question3() {
 question3();
 
 //Question 4
-var q4 = 'Did I grow up on the West Coast?';
-answer = prompt(q4).toLowerCase();
+function question4() {
+  var q4 = 'Did I grow up on the West Coast?';
+  var answer = prompt(q4).toLowerCase();
 
-console.log('User guessed:' , answer, ' to question: ', q4);
+  console.log('User guessed:' , answer, ' to question: ', q4);
 
-if (answer === 'no' || answer === 'n') {
-  //if it's correct give them a point
-  userPoints++; 
-} else {
-  //if it's not correct, exlain correct answer
-  alert('Nope! I grew up on the East coast in Mechanicsville, VA!');
+  if (answer === 'no' || answer === 'n') {
+    //if it's correct give them a point
+    userPoints++; 
+  } else {
+    //if it's not correct, exlain correct answer
+    alert('Nope! I grew up on the East coast in Mechanicsville, VA!');
+  }
 }
+question4();
 
 //Question 5
-var q5 = 'Do I prefer 4th of July to Halloween?';
-answer = prompt(q5).toUpperCase();
+function question5() {
+  var q5 = 'Do I prefer 4th of July to Halloween?';
+  var answer = prompt(q5).toUpperCase();
 
-console.log('User guessed:' , answer, ' to question: ', q5);
+  console.log('User guessed:' , answer, ' to question: ', q5);
 
-if (answer === 'YES' || answer === 'Y') {
-  //if it's correct give them a point
-  userPoints++;
-} else {
-  //if it's not correct, exlain correct answer
-  alert('Nope! 4th of July is definitely my favorite!');
+  if (answer === 'YES' || answer === 'Y') {
+    //if it's correct give them a point
+    userPoints++;
+  } else {
+    //if it's not correct, exlain correct answer
+    alert('Nope! 4th of July is definitely my favorite!');
+  }
 }
+question5();
 
 //Question 6
 var q6 = 'How many states have I lived in?';
