@@ -10,92 +10,119 @@ alert('Hello! My name is Kat! Welcome to my guessing game!');
 
 var user = prompt('What is your name?');
 
-alert('Hi ' + user + '! I am so glad you want to play my game! Please guess Yes or No for each question.');
+alert('Hi ' + user + '! I am so glad you want to play my game!');
 
 //Question 1
-function question1() {
-  var q1 = 'Do I prefer chocolate to cheese?';
-  var answer = prompt(q1).toLowerCase();
+function questionYN( q, correctAns, goodJob, oops) {
+  var input = prompt(q, 'type yes or no').toLowerCase();
 
-  console.log('User guessed:' , answer, ' to question: ', q1);
+  console.log(q, 'User guessed:' , input);
 
-  if (answer === 'no' || answer === 'n') {
-    //if it's correct give them a point
+  if (correctAns === false && (input === 'no' || input === 'n')) {
     userPoints++;
-  } else {
-    //if it's not correct, explain correct answer
-    alert('Nope! I love me some chocolate but cheese is my jam.');
-  }
-}
-question1();
-
-//Question 2
-function question2() {
-  var q2 = 'Did I keep a secret pet chinchilla in my college dorm room?';
-  var answer = prompt(q2).toLowerCase();
-
-  console.log('User guessed:' , answer, ' to question: ', q2);
-
-  if (answer === 'no' || answer === 'n') {
-    //if it's correct give them a point
+    console.log('User guessed correct; a point was added');
+    alert(goodJob);
+    alert('You have ' + userPoints + ' points out of 7.');
+  } else if (correctAns === true && (input === 'yes' || input === 'y')) {
     userPoints++;
+    console.log('User guess correct; a point was added');
+    alert(goodJob);
+    alert('You have ' + userPoints + ' points out of 7.');
   } else {
-    //if it's not correct, exlain correct answer
-    alert('Nope! But I had a secret pet python!');
+    alert(oops);
+    console.log('User did not guess correct; no points added');
   }
 }
-question2();
 
-//Question 3
-function question3() {
-  var q3 = 'Do I prefer music to TV?';
-  var answer = prompt(q3).toUpperCase();
+questionYN('Do I prefer chocolate to cheese?', false, 'Good job! You got it right', 'Chocalte is good but cheese is my jam!');
+questionYN('Did I keep a secret pet chinchilla in my college dorm room?', false, 'Way to go!', 'Nope! But I had a secret pet python!');
 
-  console.log('User guessed:' , answer, ' to question: ', q3);
 
-  if (answer === 'YES' || answer === 'Y') {
-    //if it's correct give them a point
-    userPoints++;
-  } else {
-    //if it's not correct, exlain correct answer
-    alert('No way silly! Music is my aeroplane.');
-  }
-}
-question3();
 
-//Question 4
-function question4() {
-  var q4 = 'Did I grow up on the West Coast?';
-  var answer = prompt(q4).toLowerCase();
 
-  console.log('User guessed:' , answer, ' to question: ', q4);
+// function question1() {
+//   var q1 = 'Do I prefer chocolate to cheese?';
+//   var answer = prompt(q1).toLowerCase();
 
-  if (answer === 'no' || answer === 'n') {
-    //if it's correct give them a point
-    userPoints++; 
-  } else {
-    //if it's not correct, exlain correct answer
-    alert('Nope! I grew up on the East coast in Mechanicsville, VA!');
-  }
-}
-question4();
+//   console.log('User guessed:' , answer, ' to question: ', q1);
 
-//Question 5
-function question5() {
-  var q5 = 'Do I prefer 4th of July to Halloween?';
-  var answer = prompt(q5).toUpperCase();
+//   if (answer === 'no' || answer === 'n') {
+//     //if it's correct give them a point
+//     userPoints++;
+//   } else {
+//     //if it's not correct, explain correct answer
+//     alert('Nope! I love me some chocolate but cheese is my jam.');
+//   }
+// }
+// question1();
 
-  console.log('User guessed:' , answer, ' to question: ', q5);
+// //Question 2
+// function question2() {
+//   var q2 = 'Did I keep a secret pet chinchilla in my college dorm room?';
+//   var answer = prompt(q2).toLowerCase();
 
-  if (answer === 'YES' || answer === 'Y') {
-    //if it's correct give them a point
-    userPoints++;
-  } else {
-    //if it's not correct, exlain correct answer
-    alert('Nope! 4th of July is definitely my favorite!');
-  }
-}
-question5();
+//   console.log('User guessed:' , answer, ' to question: ', q2);
+
+//   if (answer === 'no' || answer === 'n') {
+//     //if it's correct give them a point
+//     userPoints++;
+//   } else {
+//     //if it's not correct, exlain correct answer
+//     alert('Nope! But I had a secret pet python!');
+//   }
+// }
+// question2();
+
+// //Question 3
+// function question3() {
+//   var q3 = 'Do I prefer music to TV?';
+//   var answer = prompt(q3).toUpperCase();
+
+//   console.log('User guessed:' , answer, ' to question: ', q3);
+
+//   if (answer === 'YES' || answer === 'Y') {
+//     //if it's correct give them a point
+//     userPoints++;
+//   } else {
+//     //if it's not correct, exlain correct answer
+//     alert('No way silly! Music is my aeroplane.');
+//   }
+// }
+// question3();
+
+// //Question 4
+// function question4() {
+//   var q4 = 'Did I grow up on the West Coast?';
+//   var answer = prompt(q4).toLowerCase();
+
+//   console.log('User guessed:' , answer, ' to question: ', q4);
+
+//   if (answer === 'no' || answer === 'n') {
+//     //if it's correct give them a point
+//     userPoints++; 
+//   } else {
+//     //if it's not correct, exlain correct answer
+//     alert('Nope! I grew up on the East coast in Mechanicsville, VA!');
+//   }
+// }
+// question4();
+
+// //Question 5
+// function question5() {
+//   var q5 = 'Do I prefer 4th of July to Halloween?';
+//   var answer = prompt(q5).toUpperCase();
+
+//   console.log('User guessed:' , answer, ' to question: ', q5);
+
+//   if (answer === 'YES' || answer === 'Y') {
+//     //if it's correct give them a point
+//     userPoints++;
+//   } else {
+//     //if it's not correct, exlain correct answer
+//     alert('Nope! 4th of July is definitely my favorite!');
+//   }
+// }
+// question5();
 
 //Question 6
 function question6() {
