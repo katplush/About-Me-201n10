@@ -13,146 +13,66 @@ var user = prompt('What is your name?');
 alert('Hi ' + user + '! I am so glad you want to play my game!');
 
 //Question 1
-function questionYN( q, correctAns, goodJob, oops) {
-  var input = prompt(q, 'type yes or no').toLowerCase();
+// function questionYN( q, correctAns, goodJob, oops) {
+//   var input = prompt(q, 'type yes or no').toLowerCase();
 
-  console.log(q, 'User guessed:' , input);
+//   console.log(q, 'User guessed:' , input);
 
-  if (correctAns === false && (input === 'no' || input === 'n')) {
-    userPoints++;
-    console.log('User guessed correct; a point was added');
-    alert(goodJob);
-    alert('You have ' + userPoints + ' points out of 7.');
-  } else if (correctAns === true && (input === 'yes' || input === 'y')) {
-    userPoints++;
-    console.log('User guess correct; a point was added');
-    alert(goodJob);
-    alert('You have ' + userPoints + ' points out of 7.');
-  } else {
-    alert(oops);
-    console.log('User did not guess correct; no points added');
-  }
-}
-
-questionYN('Do I prefer chocolate to cheese?', false, 'Good job! You got it right', 'Chocolate is good but cheese is my jam!');
-questionYN('Did I keep a secret pet chinchilla in my college dorm room?', false, 'Way to go!', 'Nope! But I had a secret pet python!');
-questionYN('Do I prefer music to tv?', true, 'All right! You got it!', 'No way silly! Music is my aeroplane.');
-questionYN('Did I grow up on the west coast?', false, 'Good job!', 'Nope, I grew up on the east coast in Mechanicsville, VA');
-questionYN('Do I prefer 4th of July to Halloween?', true, 'Way to go!', 'Nope, 4th of July is definitely my favorite');
-
-
-
-
-// function question1() {
-//   var q1 = 'Do I prefer chocolate to cheese?';
-//   var answer = prompt(q1).toLowerCase();
-
-//   console.log('User guessed:' , answer, ' to question: ', q1);
-
-//   if (answer === 'no' || answer === 'n') {
-//     //if it's correct give them a point
+//   if (correctAns === false && (input === 'no' || input === 'n')) {
 //     userPoints++;
-//   } else {
-//     //if it's not correct, explain correct answer
-//     alert('Nope! I love me some chocolate but cheese is my jam.');
-//   }
-// }
-// question1();
-
-// //Question 2
-// function question2() {
-//   var q2 = 'Did I keep a secret pet chinchilla in my college dorm room?';
-//   var answer = prompt(q2).toLowerCase();
-
-//   console.log('User guessed:' , answer, ' to question: ', q2);
-
-//   if (answer === 'no' || answer === 'n') {
-//     //if it's correct give them a point
+//     console.log('User guessed correct; a point was added');
+//     alert(goodJob);
+//     alert('You have ' + userPoints + ' points out of 7.');
+//   } else if (correctAns === true && (input === 'yes' || input === 'y')) {
 //     userPoints++;
+//     console.log('User guess correct; a point was added');
+//     alert(goodJob);
+//     alert('You have ' + userPoints + ' points out of 7.');
 //   } else {
-//     //if it's not correct, exlain correct answer
-//     alert('Nope! But I had a secret pet python!');
+//     alert(oops);
+//     console.log('User did not guess correct; no points added');
 //   }
 // }
-// question2();
 
-// //Question 3
-// function question3() {
-//   var q3 = 'Do I prefer music to TV?';
-//   var answer = prompt(q3).toUpperCase();
-
-//   console.log('User guessed:' , answer, ' to question: ', q3);
-
-//   if (answer === 'YES' || answer === 'Y') {
-//     //if it's correct give them a point
-//     userPoints++;
-//   } else {
-//     //if it's not correct, exlain correct answer
-//     alert('No way silly! Music is my aeroplane.');
-//   }
-// }
-// question3();
-
-// //Question 4
-// function question4() {
-//   var q4 = 'Did I grow up on the West Coast?';
-//   var answer = prompt(q4).toLowerCase();
-
-//   console.log('User guessed:' , answer, ' to question: ', q4);
-
-//   if (answer === 'no' || answer === 'n') {
-//     //if it's correct give them a point
-//     userPoints++; 
-//   } else {
-//     //if it's not correct, exlain correct answer
-//     alert('Nope! I grew up on the East coast in Mechanicsville, VA!');
-//   }
-// }
-// question4();
-
-// //Question 5
-// function question5() {
-//   var q5 = 'Do I prefer 4th of July to Halloween?';
-//   var answer = prompt(q5).toUpperCase();
-
-//   console.log('User guessed:' , answer, ' to question: ', q5);
-
-//   if (answer === 'YES' || answer === 'Y') {
-//     //if it's correct give them a point
-//     userPoints++;
-//   } else {
-//     //if it's not correct, exlain correct answer
-//     alert('Nope! 4th of July is definitely my favorite!');
-//   }
-// }
-// question5();
+// questionYN('Do I prefer chocolate to cheese?', false, 'Good job! You got it right', 'Chocolate is good but cheese is my jam!');
+// questionYN('Did I keep a secret pet chinchilla in my college dorm room?', false, 'Way to go!', 'Nope! But I had a secret pet python!');
+// questionYN('Do I prefer music to tv?', true, 'All right! You got it!', 'No way silly! Music is my aeroplane.');
+// questionYN('Did I grow up on the west coast?', false, 'Good job!', 'Nope, I grew up on the east coast in Mechanicsville, VA');
+// questionYN('Do I prefer 4th of July to Halloween?', true, 'Way to go!', 'Nope, 4th of July is definitely my favorite');
 
 //Question 6
-// function question6() {
-//   var q6 = 'How many states have I lived in?';
-//   var correctQ6Answer = '4';
-//   var tries = 4;
 
-//   for (let i = 0; i < tries; i++) {
-//     var userGuess = prompt(q6);
+function questionNum(q, correctAns) {
+  var tries = 4;
 
-//     console.log('User guessed: ', userGuess);
+  for (let i = 0; i < tries; i++) {
+    var input = prompt(q);
+    var userGuessInt = parseInt(input);
+    if(isNaN(userGuessInt)) {
+      console.log('User entered non-numberic input');
+      alert('Sorry you need to enter a numberic response.');
+      continue;
+    }
 
-//     if (userGuess === correctQ6Answer) {
-//     // correct.
-//       alert('You\'ve guessed right! I\'ve lived in Rhode Island, Virginia, Florida and Washington!');
-//       userPoints++;
-//       break;
-//     } else {
-//     // incorrect.
-//       var tooHigh = userGuess > correctQ6Answer;
+    if (userGuessInt === correctAns) {
+      // correct
+      alert('You\'ve guessed right! I\'ve lived in Rhode Island, Virginia, Florida and Washington');
+      userPoints++;
+      console.log('User guessed correct answer', input, '; A point was added');
+      break;
+    } else {
+      //incorrect
+      var tooHigh = userGuessInt > correctAns;
 
-//       if (tooHigh) alert ('Sorry you guessed too high, please try again!');
-//       else alert('Sorry you guessed too low, please try again!');
-//     }
-//   }
-// }
-// question6();
+      if (tooHigh) alert ('Sorry you guessed too high, please try again!');
+      else alert('Sorry you guessed too low, please try again!');
+      console.log('User guessed: ', input, '; no points added.');
+    }
+  }
+}
+questionNum('How many states have I lived in?', 4);
+
+
 
 // //Question 7
 // function question7() {
