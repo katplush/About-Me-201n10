@@ -34,8 +34,10 @@ function questionYN( q, correctAns, goodJob, oops) {
   }
 }
 
-questionYN('Do I prefer chocolate to cheese?', false, 'Good job! You got it right', 'Chocalte is good but cheese is my jam!');
+questionYN('Do I prefer chocolate to cheese?', false, 'Good job! You got it right', 'Chocolate is good but cheese is my jam!');
 questionYN('Did I keep a secret pet chinchilla in my college dorm room?', false, 'Way to go!', 'Nope! But I had a secret pet python!');
+questionYN('Do I prefer music to tv?', true, 'All right! You got it!', 'No way silly! Music is my aeroplane.');
+questionYN('Did I grow up on the west coast?', false, 'Good job!', 'Nope, I grew up on the east coast in Mechanicsville, VA');
 
 
 
@@ -125,63 +127,63 @@ questionYN('Did I keep a secret pet chinchilla in my college dorm room?', false,
 // question5();
 
 //Question 6
-function question6() {
-  var q6 = 'How many states have I lived in?';
-  var correctQ6Answer = '4';
-  var tries = 4;
+// function question6() {
+//   var q6 = 'How many states have I lived in?';
+//   var correctQ6Answer = '4';
+//   var tries = 4;
 
-  for (let i = 0; i < tries; i++) {
-    var userGuess = prompt(q6);
+//   for (let i = 0; i < tries; i++) {
+//     var userGuess = prompt(q6);
 
-    console.log('User guessed: ', userGuess);
+//     console.log('User guessed: ', userGuess);
 
-    if (userGuess === correctQ6Answer) {
-    // correct.
-      alert('You\'ve guessed right! I\'ve lived in Rhode Island, Virginia, Florida and Washington!');
-      userPoints++;
-      break;
-    } else {
-    // incorrect.
-      var tooHigh = userGuess > correctQ6Answer;
+//     if (userGuess === correctQ6Answer) {
+//     // correct.
+//       alert('You\'ve guessed right! I\'ve lived in Rhode Island, Virginia, Florida and Washington!');
+//       userPoints++;
+//       break;
+//     } else {
+//     // incorrect.
+//       var tooHigh = userGuess > correctQ6Answer;
 
-      if (tooHigh) alert ('Sorry you guessed too high, please try again!');
-      else alert('Sorry you guessed too low, please try again!');
-    }
-  }
-}
-question6();
+//       if (tooHigh) alert ('Sorry you guessed too high, please try again!');
+//       else alert('Sorry you guessed too low, please try again!');
+//     }
+//   }
+// }
+// question6();
 
-//Question 7
-function question7() {
-  var q7 = 'Can you guess a name of one of my favorite singers or bands?';
-  var favSingerBand = ['Cher','Weezer','The Coathangers', 'Stromae','Sia'];
-  var maxTries = 6;
+// //Question 7
+// function question7() {
+//   var q7 = 'Can you guess a name of one of my favorite singers or bands?';
+//   var favSingerBand = ['Cher','Weezer','The Coathangers', 'Stromae','Sia'];
+//   var maxTries = 6;
 
-  //Ask question; compare user guess to answers in array
-  for (let i = 0; i < maxTries; i++) {
+//   //Ask question; compare user guess to answers in array
+//   for (let i = 0; i < maxTries; i++) {
 
-    var doesItMatch = false;
-    var userGuess = prompt(q7).toLowerCase();
+//     var doesItMatch = false;
+//     var userGuess = prompt(q7).toLowerCase();
 
-    for (var a_i = 0; a_i < favSingerBand.length; a_i++) {
-      console.log('User guessed: ', userGuess);
+//     for (var a_i = 0; a_i < favSingerBand.length; a_i++) {
+//       console.log('User guessed: ', userGuess);
 
-      if  (userGuess === favSingerBand[a_i].toLowerCase()) {
-        // correct.
-        console.log('User guessed a correct answer.');
-        alert('Wow, you are good!');
-        userPoints++;
-        doesItMatch = true;
-        break;
-      }
-    }
+//       if  (userGuess === favSingerBand[a_i].toLowerCase()) {
+//         // correct.
+//         console.log('User guessed a correct answer.');
+//         alert('Wow, you are good!');
+//         userPoints++;
+//         doesItMatch = true;
+//         break;
+//       }
+//     }
 
-    if (doesItMatch) {
-      break;
-    }
-  }
-  alert('Good effort! Here are just a few of my favorites: ' + favSingerBand.join(', '));
-}
-question7();
+//     if (doesItMatch) {
+//       break;
+//     }
+//   }
+//   alert('Good effort! Here are just a few of my favorites: ' + favSingerBand.join(', '));
+// }
+// question7();
 
-alert('You have ' + userPoints + ' points out of 7. Thanks for playing ' + user + '!');
+// alert('You have ' + userPoints + ' points out of 7. Thanks for playing ' + user + '!');
