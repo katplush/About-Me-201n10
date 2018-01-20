@@ -38,6 +38,7 @@ questionYN('Do I prefer chocolate to cheese?', false, 'Good job! You got it righ
 questionYN('Did I keep a secret pet chinchilla in my college dorm room?', false, 'Way to go!', 'Nope! But I had a secret pet python!');
 questionYN('Do I prefer music to tv?', true, 'All right! You got it!', 'No way silly! Music is my aeroplane.');
 questionYN('Did I grow up on the west coast?', false, 'Good job!', 'Nope, I grew up on the east coast in Mechanicsville, VA');
+questionYN('Do I prefer 4th of July to Halloween?', true, 'Way to go!', 'Nope, 4th of July is definitely my favorite');
 
 
 
