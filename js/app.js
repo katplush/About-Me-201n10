@@ -1,7 +1,8 @@
-'use strict'; 
+'use strict';
+
+var userPoints = 0;
 
 //Introducion to Guessing Game
-var userPoints = 0;
 
 console.log('About Me Guessing Game Introductions');
 
@@ -9,76 +10,99 @@ alert('Hello! My name is Kat! Welcome to my guessing game!');
 
 var user = prompt('What is your name?');
 
-alert('Hi ' + user + '! I am so glad you want to play my game! Please guess Yes or No for each question.');
+alert('Hi ' + user + '! I am so glad you want to play my game!');
 
-//Question 1
-var q1 = 'Do I prefer chocolate to cheese?'
-var answer = prompt(q1).toLowerCase();
+// Questions 1-5
+function questionYN( q, correctAns, goodJob, oops) {
+  var input = prompt(q, 'type yes or no').toLowerCase();
 
-console.log("User guessed:" , answer, " to question: ", q1);
+  console.log(q, 'User guessed:' , input);
 
-if (answer === 'no' || answer === 'n') {
-    //if it's correct give them a point
-    userPoints++; 
-} else {
-    //if it's not correct, explain correct answer
-    alert('Nope! I love me some chocolate but cheese is my jam.');
+  if (correctAns === false && (input === 'no' || input === 'n')) {
+    userPoints++;
+    console.log('User guessed correct; a point was added');
+    alert(goodJob);
+    alert('You have ' + userPoints + ' points out of 7.');
+  } else if (correctAns === true && (input === 'yes' || input === 'y')) {
+    userPoints++;
+    console.log('User guess correct; a point was added');
+    alert(goodJob);
+    alert('You have ' + userPoints + ' points out of 7.');
+  } else {
+    alert(oops);
+    console.log('User did not guess correct; no points added');
+  }
 }
 
-//Question 2
-var q2 = 'Did I keep a secret pet chinchilla in my college dorm room?'
-var answer = prompt(q2).toLowerCase();
+questionYN('Do I prefer chocolate to cheese?', false, 'Good job! You got it right', 'Chocolate is good but cheese is my jam!');
+questionYN('Did I keep a secret pet chinchilla in my college dorm room?', false, 'Way to go!', 'Nope! But I had a secret pet python!');
+questionYN('Do I prefer music to tv?', true, 'All right! You got it!', 'No way silly! Music is my aeroplane.');
+questionYN('Did I grow up on the west coast?', false, 'Good job!', 'Nope, I grew up on the east coast in Mechanicsville, VA');
+questionYN('Do I prefer 4th of July to Halloween?', true, 'Way to go!', 'Nope, 4th of July is definitely my favorite');
 
-console.log("User guessed:" , answer, " to question: ", q2);
+// Question 6
 
-if (answer === 'no' || answer === 'n') {
-    //if it's correct give them a point
-    userPoints++; 
-} else {
-    //if it's not correct, exlain correct answer
-    alert('Nope! But I had a secret pet python!');
+function questionNum(q, correctAns) {
+  var tries = 4;
+
+  for (let i = 0; i < tries; i++) {
+    var input = prompt(q);
+    var userGuessInt = parseInt(input);
+    if(isNaN(userGuessInt)) {
+      console.log('User entered non-numberic input');
+      alert('Sorry you need to enter a numberic response.');
+      continue;
+    }
+
+    if (userGuessInt === correctAns) {
+      // correct
+      alert('You\'ve guessed right! I\'ve lived in Rhode Island, Virginia, Florida and Washington');
+      userPoints++;
+      console.log('User guessed correct answer', input, '; A point was added');
+      break;
+    } else {
+      //incorrect
+      var tooHigh = userGuessInt > correctAns;
+
+      if (tooHigh) alert ('Sorry you guessed too high, please try again!');
+      else alert('Sorry you guessed too low, please try again!');
+      console.log('User guessed: ', input, '; no points added.');
+    }
+  }
 }
+questionNum('How many states have I lived in?', 4);
 
-//Question 3
-var q3 = 'Do I prefer music to TV?'
-var answer = prompt(q3).toUpperCase();
+//Question 7
+function question7() {
+  var q7 = 'Can you guess a name of one of my favorite singers or bands?';
+  var favSingerBand = ['Cher','Weezer','The Coathangers', 'Stromae','Sia'];
+  var maxTries = 6;
 
-console.log("User guessed:" , answer, " to question: ", q3);
+  //Ask question; compare user guess to answers in array
+  for (let i = 0; i < maxTries; i++) {
 
-if (answer === 'YES' || answer === 'Y') {
-    //if it's correct give them a point
-    userPoints++; 
-} else {
-    //if it's not correct, exlain correct answer
-    alert('No way silly! Music is my aeroplane.');
+    var doesItMatch = false;
+    var userGuess = prompt(q7).toLowerCase();
+
+    for (var a_i = 0; a_i < favSingerBand.length; a_i++) {
+      console.log('User guessed: ', userGuess);
+
+      if  (userGuess === favSingerBand[a_i].toLowerCase()) {
+        // correct.
+        console.log('User guessed a correct answer.');
+        alert('Wow, you are good!');
+        userPoints++;
+        doesItMatch = true;
+        break;
+      }
+    }
+
+    if (doesItMatch) {
+      break;
+    }
+  }
+  alert('Good effort! Here are just a few of my favorites: ' + favSingerBand.join(', '));
 }
+question7();
 
-//Question 4
-var q4 = 'Did I grow up on the West Coast?'
-var answer = prompt(q4).toLowerCase();
-
-console.log("User guessed:" , answer, " to question: ", q4);
-
-if (answer === 'no' || answer === 'n') {
-    //if it's correct give them a point
-    userPoints++; 
-} else {
-    //if it's not correct, exlain correct answer
-    alert('Nope! I grew up on the East coast in Mechanicsville, VA!');
-}
-
-//Question 5
-var q5 = 'Do I prefer 4th of July to Halloween?'
-var answer = prompt(q5).toUpperCase();
-
-console.log("User guessed:" , answer, " to question: ", q5);
-
-if (answer === 'YES' || answer === 'Y') {
-    //if it's correct give them a point
-    userPoints++; 
-} else {
-    //if it's not correct, exlain correct answer
-    alert('Nope! 4th of July is definitely my favorite!');
-}
-
-alert('You have ' + userPoints + ' points. Thanks for playing!');
+alert('You have ' + userPoints + ' points out of 7. Thanks for playing ' + user + '!');
