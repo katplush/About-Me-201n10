@@ -62,7 +62,7 @@ console.log('User guessed:' , answer, ' to question: ', q4);
 
 if (answer === 'no' || answer === 'n') {
   //if it's correct give them a point
-  userPoints++; 
+  userPoints++;
 } else {
   //if it's not correct, exlain correct answer
   alert('Nope! I grew up on the East coast in Mechanicsville, VA!');
@@ -120,7 +120,7 @@ for (let i = 0; i < maxTries; i++) {
   for (var a_i = 0; a_i < favSingerBand.length; a_i++) {
     console.log('User guessed: ', userGuess);
 
-    if  (userGuess === favSingerBand[a_i].toLowerCase()) {
+    if(userGuess === favSingerBand[a_i].toLowerCase()) {
       // correct.
       console.log('User guessed a correct answer.');
       alert('Wow, you are good!');
